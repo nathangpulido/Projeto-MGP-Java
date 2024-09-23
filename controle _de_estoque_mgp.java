@@ -40,27 +40,27 @@ public class GerenciamentoEstoque {
 
         do {
             System.out.println("\nGerenciamento de Estoque de Canecas");
-            System.out.println("1. Adicionar Caneca");
-            System.out.println("2. Remover Caneca");
-            System.out.println("3. Atualizar Quantidade");
-            System.out.println("4. Listar Estoque");
+            System.out.println("1. Cadastrar novo pedido");
+            System.out.println("2. Gerar relatório de vendas");
+            System.out.println("3. Consultar Estoque");
+            System.out.println("4. Cadastrar produto");
             System.out.println("5. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine();  // Consumir a nova linha
+            scanner.nextLine();  
 
             switch (opcao) {
                 case 1:
-                    adicionarCaneca(scanner);
+                    Cadastrarnovopedido(scanner);
                     break;
                 case 2:
-                    removerCaneca(scanner);
+                    Gerarrelatóriodevendas(scanner);
                     break;
                 case 3:
-                    atualizarQuantidade(scanner);
+                    Consultarestoque(scanner);
                     break;
                 case 4:
-                    listarEstoque();
+                    Cadastrarproduto();
                     break;
                 case 5:
                     System.out.println("Saindo...");
@@ -71,19 +71,19 @@ public class GerenciamentoEstoque {
         } while (opcao != 5);
     }
 
-    private static void adicionarCaneca(Scanner scanner) {
+    private static void Cadastrarnovopedido(Scanner scanner) {
         System.out.print("Nome da Caneca: ");
         String nome = scanner.nextLine();
         System.out.print("Quantidade: ");
         int quantidade = scanner.nextInt();
-        scanner.nextLine();  // Consumir a nova linha
+        scanner.nextLine(); 
 
-        Caneca caneca = new Caneca(nome, quantidade);
+        Novopedido caneca = new Novopedido(nome, quantidade);
         estoque.add(caneca);
-        System.out.println("Caneca adicionada com sucesso!");
+        System.out.println("Pedido cadastrado com sucesso!");
     }
 
-    private static void removerCaneca(Scanner scanner) {
+    private static void Gerarrelatoriodevendas(Scanner scanner) {
         System.out.print("Nome da Caneca a ser removida: ");
         String nome = scanner.nextLine();
 
@@ -97,7 +97,7 @@ public class GerenciamentoEstoque {
         System.out.println("Caneca não encontrada!");
     }
 
-    private static void atualizarQuantidade(Scanner scanner) {
+    private static void Consultarestoque(Scanner scanner) {
         System.out.print("Nome da Caneca: ");
         String nome = scanner.nextLine();
         System.out.print("Nova Quantidade: ");
@@ -114,7 +114,7 @@ public class GerenciamentoEstoque {
         System.out.println("Caneca não encontrada!");
     }
 
-    private static void listarEstoque() {
+    private static void cadastrarproduto() {
         if (estoque.isEmpty()) {
             System.out.println("Estoque vazio!");
         } else {
