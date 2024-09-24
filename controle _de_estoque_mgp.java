@@ -84,44 +84,15 @@ public class GerenciamentoEstoque {
     }
 
     private static void Gerarrelatoriodevendas(Scanner scanner) {
-        System.out.print("Nome da Caneca a ser removida: ");
-        String nome = scanner.nextLine();
+        System.out.print("Gerando Relatório de Vendas");
 
-        for (Caneca caneca : estoque) {
-            if (caneca.getNome().equalsIgnoreCase(nome)) {
-                estoque.remove(caneca);
-                System.out.println("Caneca removida com sucesso!");
-                return;
-            }
-        }
-        System.out.println("Caneca não encontrada!");
     }
 
     private static void Consultarestoque(Scanner scanner) {
-        System.out.print("Nome da Caneca: ");
-        String nome = scanner.nextLine();
-        System.out.print("Nova Quantidade: ");
-        int quantidade = scanner.nextInt();
-        scanner.nextLine();  // Consumir a nova linha
-
-        for (Caneca caneca : estoque) {
-            if (caneca.getNome().equalsIgnoreCase(nome)) {
-                caneca.setQuantidade(quantidade);
-                System.out.println("Quantidade atualizada com sucesso!");
-                return;
-            }
-        }
-        System.out.println("Caneca não encontrada!");
+        System.out.print("Consultando Estoque");
     }
 
     private static void cadastrarproduto() {
-        if (estoque.isEmpty()) {
-            System.out.println("Estoque vazio!");
-        } else {
-            System.out.println("Estoque de Canecas:");
-            for (Caneca caneca : estoque) {
-                System.out.println(caneca);
-            }
-        }
+            System.out.println("Digite o Produto");
     }
 }
