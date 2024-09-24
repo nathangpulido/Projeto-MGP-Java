@@ -60,7 +60,7 @@ public class GerenciamentoEstoque {
                     Consultarestoque(scanner);
                     break;
                 case 4:
-                    Cadastrarproduto();
+                    Cadastrarproduto(scanner);
                     break;
                 case 5:
                     System.out.println("Saindo...");
